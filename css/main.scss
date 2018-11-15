@@ -327,8 +327,10 @@ footer .social a.twitter {
   border: 0;
   color: #000;
   display: inline;
+  font-weight: 600;
   padding: .5rem;
-  width: 3rem;
+  text-align: center;
+  width: 4rem;
 }
 
 #quote form input:focus {
@@ -336,8 +338,6 @@ footer .social a.twitter {
 }
 
 #quote form input#ddp {
-  height: 1rem;
-  width: 1rem;
 }
 
 #quote button {
