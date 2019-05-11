@@ -1,8 +1,8 @@
 title: Melograf Mastering
 email: mail@melograf.com
-description: Audio mastering by Christopher Leary.
-baseurl: ""
-url: "http://melograf.com"
+description: 'Audio mastering by Christopher Leary.'
+baseurl:
+url: 'https://melograf.com'
 twitter:
   username: ochremusic
 facebook:
@@ -17,6 +17,15 @@ social:
     - https://www.facebook.com/melograf
 
 # Build settings
+nav:
+  - title: "Process"
+    permalink: "/process/"
+  - title: "FAQ"
+    permalink: "/faq/"
+  - title: "About"
+    permalink: "/about/"
+  - title: "Contact"
+    permalink: "/contact/"
 
 defaults:
   layout: page
