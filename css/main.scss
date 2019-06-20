@@ -4,6 +4,7 @@
 $black: #000;
 $charcoal: #111;
 $dark-grey: #1a1a1a;
+$nav-background: rgba(26, 26, 26, 0.9);
 $mid-grey: #2d2d2d;
 $light-grey: #999;
 $off-white: #eee;
@@ -17,8 +18,8 @@ $light-green: #90ee90;
 $facebook: #49629d;
 $twitter: #6aa9e0;
 
-@import url("{{ site.baseurl }}/assets/slick/slick.css");
-@import url("{{ site.baseurl }}/assets/slick/slick-theme.css");
+@import url('{{ site.baseurl }}/assets/slick/slick.css');
+@import url('{{ site.baseurl }}/assets/slick/slick-theme.css');
 
 @viewport {
   width: device-width;
@@ -46,14 +47,22 @@ figure {
   display: block;
 }
 
-a:link,
-a:active,
-a:visited {
-  text-decoration: none;
+a {
+  &:link,
+  &:active,
+  &:visited {
+    text-decoration: none;
+  }
+
+  &.nav {
+    &:hover {
+      color: inherit;
+    }
+  }
 }
 
-abbr[title],
-acronym[title] {
+abbr,
+acronym {
   border-bottom: 1px dashed $off-white;
   cursor: help;
   text-decoration: none;
@@ -62,7 +71,7 @@ acronym[title] {
 body {
   background: $dark-grey;
   color: $off-white;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 100%;
   margin: 0 auto;
   max-width: 800px;
@@ -83,7 +92,7 @@ p {
 
 header {
   color: $cyan;
-  font-family: "Voltaire", sans-serif;
+  font-family: 'Voltaire', sans-serif;
   padding: 1.25rem;
   text-align: center;
   text-shadow: 0 0 10px $cyan;
@@ -120,7 +129,7 @@ header {
 }
 
 nav {
-  background: rgba(26, 26, 26, 0.9);
+  background: $nav-background;
   font-size: 1.3rem;
   font-weight: 600;
   margin: 10px 0;
@@ -130,51 +139,55 @@ nav {
   text-transform: uppercase;
   top: 0;
   z-index: 999;
-}
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-}
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+  }
 
-nav ul li {
-  margin: 0;
-}
+  li {
+    margin: 0;
+  }
 
-nav a {
-  color: $off-white;
-  padding: 5px 10px;
-  transition: 0.2s ease-in-out;
-}
+  #current {
+    a {
+      color: $cyan;
+      text-shadow: 0 0 10px $cyan;
+    }
+  }
 
-nav a:hover {
-  color: $light-grey;
-  transition: 0.1s ease-in-out;
-}
+  a {
+    color: $off-white;
+    padding: 5px 10px;
+    transition: color 0.2s ease-in-out;
 
-nav a:active {
-  position: relative;
-  top: 1px;
-}
+    &:hover {
+      color: $light-grey;
+      transition: color 0.1s ease-in-out;
+    }
 
-nav li#current a {
-  color: $cyan;
-  text-shadow: 0 0 10px $cyan;
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
 }
 
 section {
   padding: 1.25rem;
-}
 
-section a:link,
-section a:visited {
-  color: $cyan;
-}
+  a {
+    &:link,
+    &:visited {
+      color: $cyan;
+    }
 
-section a:hover {
-  border-bottom: 2px solid $cyan;
+    &:hover {
+      border-bottom: 2px solid $cyan;
+    }
+  }
 }
 
 ul {
@@ -183,10 +196,12 @@ ul {
 
 li {
   margin-bottom: 1rem;
-}
 
-li a:link {
-  border-bottom: 0;
+  a {
+    &:link {
+      border-bottom: 0;
+    }
+  }
 }
 
 .discog {
@@ -211,7 +226,26 @@ footer {
 }
 
 form {
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+#contact-form {
+  label {
+    line-height: 2rem;
+  }
+}
+
+.form-wrapper {
+  display: flex;
+}
+
+.form-left {
+  flex: 1;
+  padding-right: 1.25rem;
+}
+
+.form-right {
+  flex: 1;
 }
 
 input {
@@ -222,23 +256,26 @@ input {
   font-size: 1rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  width: 50%;
+  width: 100%;
+
+  &:focus {
+    background: $white;
+  }
 }
 
 textarea {
   background: $off-white;
   border: 0;
   color: $black;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
   width: 100%;
-}
 
-input:focus,
-form textarea:focus {
-  background: $white;
+  &:focus {
+    background: $white;
+  }
 }
 
 .send {
@@ -246,36 +283,36 @@ form textarea:focus {
   border: 2px solid $white;
   color: $white;
   cursor: pointer;
-  float: right;
   font-weight: 600;
   margin-bottom: 1rem;
+  margin-left: auto;
   padding: 1rem;
-  width: 12rem;
   transition: color 0.5s, background 0.5s;
-}
+  width: 12rem;
 
-.send:hover {
-  background: $cyan;
-  border-color: $cyan;
-  color: #000;
-  transition: color 0.2s, background 0.2s;
-}
+  &:hover {
+    background: $cyan;
+    border-color: $cyan;
+    color: $black;
+    transition: color 0.2s, background 0.2s;
+  }
 
-.send:active {
-  background: #000;
-  border-color: $cyan;
-  color: $cyan;
-  transition: color 0s, background 0s;
-}
+  &:active {
+    background: $black;
+    border-color: $cyan;
+    color: $cyan;
+    transition: color 0s, background 0s;
+  }
 
-.send:focus {
-  background: #000;
-  border-color: $cyan;
-  transition: color 0s, background 0s;
+  &:focus {
+    background: $black;
+    border-color: $cyan;
+    transition: color 0s, background 0s;
+  }
 }
 
 .success {
-  background: #90ee90;
+  background: $light-green;
   clear: both;
   color: $dark-green;
   margin-bottom: 1rem;
@@ -299,64 +336,64 @@ img {
 .social {
   display: block;
   padding: 1rem;
+
+  .facebook,
+  .twitter {
+    border-radius: 1rem;
+    box-sizing: border-box;
+    display: inline-block;
+    filter: grayscale(100%);
+    height: 2rem;
+    width: 2rem;
+
+    &:hover {
+      filter: grayscale(0%);
+      transition: 0.2s ease-in;
+    }
+  }
+
+  .facebook {
+    background: $facebook url('{{ base.url }}/assets/facebook.svg') no-repeat center;
+    background-size: 1rem;
+    margin-right: 1rem;
+  }
+
+  .twitter {
+    background: $twitter url('{{ base.url }}/assets/twitter.svg') no-repeat center;
+    background-size: 1rem;
+  }
 }
 
-.social .facebook,
-.social .twitter {
-  border-radius: 1rem;
-  box-sizing: border-box;
-  display: inline-block;
-  filter: grayscale(100%);
-  height: 2rem;
-  width: 2rem;
-}
+#quote {
+  form {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    padding: 0 1.25rem;
 
-.social .facebook:hover,
-.social .twitter:hover {
-  filter: grayscale(0%);
-  transition: 0.2s ease-in;
-}
+    label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding-right: 2rem;
+      width: 75%;
+    }
 
-.social .facebook {
-  background: $facebook url("{{ base.url }}/assets/facebook.svg") no-repeat
-    center;
-  background-size: 1rem;
-  margin-right: 1rem;
-}
+    input {
+      background: $off-white;
+      border: 0;
+      color: $black;
+      display: inline;
+      font-weight: 600;
+      padding: 0.5rem;
+      text-align: center;
+      width: 4rem;
 
-.social .twitter {
-  background: $twitter url("{{ base.url }}/assets/twitter.svg") no-repeat center;
-  background-size: 1rem;
-}
-
-#quote form {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 0 1.25rem;
-  margin: 1rem 0;
-}
-
-#quote form label {
-  display: inline-block;
-  margin-bottom: 1rem;
-  padding-right: 2rem;
-  width: 75%;
-}
-
-#quote form input {
-  background: $off-white;
-  border: 0;
-  color: $black;
-  display: inline;
-  font-weight: 600;
-  padding: 0.5rem;
-  text-align: center;
-  width: 4rem;
-}
-
-#quote form input:focus {
-  background: $off-white;
+      &:focus {
+        background: $off-white;
+      }
+    }
+  }
 }
 
 #results {
@@ -378,52 +415,53 @@ button {
   padding: 1rem;
   transition: color 0.5s, background 0.5s;
   width: 12rem;
-}
 
-button:hover {
-  background: $cyan;
-  border-color: $cyan;
-  color: $black;
-  transition: color 0.2s, background 0.2s;
-}
+  &:hover {
+    background: $cyan;
+    border-color: $cyan;
+    color: $black;
+    transition: color 0.2s, background 0.2s;
+  }
 
-button:active {
-  background: $black;
-  border-color: $cyan;
-  color: $cyan;
-  transition: color 0s, background 0s;
-}
+  &:active {
+    background: $black;
+    border-color: $cyan;
+    color: $cyan;
+    transition: color 0s, background 0s;
+  }
 
-button:disabled,
-button:disabled:hover {
-  background: $black;
-  border-color: $cyan;
-  color: $cyan;
+  &:disabled,
+  &:disabled {
+    &:hover {
+      background: $black;
+      border-color: $cyan;
+      color: $cyan;
+    }
+  }
 }
 
 .check {
   display: none;
 }
 
-.discog-art p {
-  text-align: center;
+.discog-art {
+  p {
+    text-align: center;
+  }
 }
 
-/* Form validation for non-HTML5 browsers */
+// Form validation for non-HTML5 browsers
 
-.invalid input:required:invalid,
-.invalid textarea:required:invalid {
-  color: $red;
-  background: $pink;
-}
+.invalid {
+  &:invalid {
+    background: $pink;
+    color: $red;
+  }
 
-.invalid input:required:valid {
-  color: $dark-green;
-  background: $light-green;
-}
-
-a.nav:hover {
-  color: inherit;
+  &:valid {
+    background: $light-green;
+    color: $dark-green;
+  }
 }
 
 #paymentForm {
@@ -433,6 +471,16 @@ a.nav:hover {
 #customButton {
   margin: 0 0 0 1rem;
   padding: 0;
+}
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
 }
 
 @media (max-width: 800px) {
@@ -464,6 +512,14 @@ a.nav:hover {
     margin: 1rem 0 0;
     padding: 1rem 0;
   }
+
+  .form-wrapper {
+    display: block;
+  }
+
+  .form-left {
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 400px) {
@@ -471,8 +527,10 @@ a.nav:hover {
     padding: 1rem;
   }
 
-  nav ul {
-    justify-content: space-between;
+  nav {
+    ul {
+      justify-content: space-between;
+    }
   }
 
   .hline {
@@ -490,37 +548,36 @@ a.nav:hover {
   form {
     margin-top: 2rem;
     padding: 0;
-  }
 
-  form input {
-    width: 100%;
+    input {
+      width: 100%;
+    }
   }
 
   .send,
   button {
-    float: none;
     margin: 0 auto 1rem;
     width: 100%;
   }
 
   .social {
     padding: 2rem;
-  }
 
-  .social .facebook,
-  .social .twitter {
-    border-radius: 2rem;
-    height: 4rem;
-    width: 4rem;
-  }
+    .facebook,
+    .twitter {
+      border-radius: 2rem;
+      height: 4rem;
+      width: 4rem;
+    }
 
-  .social .facebook {
-    background-size: 2rem;
-    margin-right: 2rem;
-  }
+    .facebook {
+      background-size: 2rem;
+      margin-right: 2rem;
+    }
 
-  .social .twitter {
-    background-size: 2rem;
+    .twitter {
+      background-size: 2rem;
+    }
   }
 
   textarea {

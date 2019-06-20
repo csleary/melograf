@@ -1,96 +1,78 @@
 ---
 layout: page
 title: Home
+permalink: '/'
 ---
 
 <section>
   <h1>Welcome to Melograf</h1>
-  <p>We're celebrating ten years of mastering, from 2009&ndash;2019!</p>
+  <p>Celebrating ten years of mastering, 2009&ndash;2019!</p>
   <p>
-    Created for the emergent class of DIY musicians and indie labels, Melograf
-    provides the means to give every release the final sheen, balance and punch
-    needed to sound its best, at <a href="#rates">indie-friendly prices</a>. We
-    proudly offer a tailored experience, striving to meet the needs of a variety
-    of artists and labels, across a spectrum of musical genres and styles.
+    Created for the emergent class of DIY musicians and indie labels, Melograf provides the means to
+    give every release the final sheen, balance and punch needed to sound its best, at
+    <a href="#rates">indie-friendly prices</a>. We proudly offer a tailored experience, striving to
+    meet the needs of a variety of artists and labels, across a spectrum of musical genres and
+    styles.
   </p>
   <h1>Hybrid Mastering</h1>
   <p>
-    With rates from as little as &euro;30 per track, there's no reason why your
-    next release can't be given an extra polish. As an unattended mastering
-    service with online file transfers, it doesn't matter where you're working
-    from&mdash;your music can benefit from an objective ear, along with
-    world-class analogue outboard equipment and digital processing.
+    With rates from as little as &euro;30 per track, there's no reason why your next release can't
+    be given an extra polish. As an unattended mastering service with online file transfers, it
+    doesn't matter where you're working from&mdash;your music can benefit from an objective ear,
+    along with world-class analogue outboard equipment and digital processing.
   </p>
   <img
-    srcset="{{ base.url }}/assets/api_sm.jpg 760w, {{ base.url }}/assets/api.jpg 1520w"
-    sizes="100vw"
-    src="{{ base.url }}/assets/api_sm.jpg"
+    data-sizes="100vw"
+    data-src="{{ base.url }}/assets/api_sm.jpg"
+    data-srcset="{{ base.url }}/assets/api_sm.jpg 760w, {{ base.url }}/assets/api.jpg 1520w"
     alt=""
+    class="lazyload"
   />
   <h1 id="rates">Rates</h1>
   <p>
-    I work to a scaled system, depending on the number of tracks to be mastered.
-    It is more cost-effective to have multiple tracks mastered in a single
-    session, than to have single tracks mastered periodically.
+    I work to a scaled system, depending on the number of tracks to be mastered. It is more
+    cost-effective to have multiple tracks mastered in a single session, than to have single tracks
+    mastered periodically.
   </p>
   <ul>
     <li>First track: &euro;45 EUR</li>
     <li>2nd&ndash;4th tracks: &euro;35 per track</li>
     <li>5th+ tracks: &euro;30 per track</li>
     <li>
-      Extra versions/edits/instrumentals are mastered at a reduced rate of
-      &euro;10 per track (when included with original track)
+      Extra versions/edits/instrumentals are mastered at a reduced rate of &euro;10 per track (when
+      included with original track)
     </li>
     <li>An optional &euro;50 charged for a DDP image</li>
-    <li>
-      Total amount subject to VAT of 21% inside the EU (unless you have a VAT
-      number)
-    </li>
+    <li>Total amount subject to VAT of 21% inside the EU (unless you have a VAT number)</li>
   </ul>
   <p>
-    Accepted methods of payment are credit/debit card (via Stripe), PayPal, and
-    bank transfer. You will receive a pdf invoice via email, detailing how to
-    conveniently and quickly pay before receiving your masters.
+    Accepted methods of payment are credit/debit card (via Stripe), PayPal, and bank transfer. You
+    will receive a pdf invoice via email, detailing how to conveniently and quickly pay before
+    receiving your masters.
   </p>
   <div id="quote">
     <h1>Quick Quote</h1>
     <form>
-      <label>Number of tracks to be mastered:</label>
-      <input
-        type="number"
-        min="0"
-        id="numTracks"
-        size="3"
-        value="0"
-        onchange="quote()"
-      /><br />
-      <label
-        >Number of extra versions (instrumentals, radio/alt. mixes etc.):</label
-      >
-      <input
-        type="number"
-        min="0"
-        id="extras"
-        size="3"
-        value="0"
-        onchange="quote()"
-      /><br />
-      <label for="ddp"
-        ><abbr
+      <label for="numTracks">Number of tracks to be mastered:</label>
+      <input type="number" min="0" id="numTracks" size="3" value="0" onchange="quote()" /><br />
+      <label for="extras"> Number of extra versions (instrumentals, radio/alt. mixes etc.): </label>
+      <input type="number" min="0" id="extras" size="3" value="0" onchange="quote()" /><br />
+      <label for="ddp">
+        <abbr
           title="Disc Description Protocol&mdash;a format used by manufacturers for CD replication, supplied as a zip file download. More robust than a physical CD master."
           >DDP</abbr
         >
-        image required:</label
-      >
+        image required:
+      </label>
       <input type="checkbox" id="ddp" onchange="quote()" />
-      <label for="vat">Include VAT (21%) in quote:</label>
+      <label for="vat"> Include VAT (21%) in quote: </label>
       <input type="checkbox" id="vat" onchange="quote()" />
     </form>
     <button onclick="quote()">Update quote</button>
     <p id="results"></p>
     <p>
-      <a href="process">Read on</a> to learn how to prepare your music. Ready to
-      get started? Please <a href="contact">get in touch</a>.
+      Read on to <a href="process">learn how to prepare your music</a>. Ready to get started? Please
+      <a href="contact">get in touch</a>.
     </p>
   </div>
 </section>

@@ -1,0 +1,6 @@
+rules:
+  leading-zero: 0
+  nesting-depth:
+    - 2
+    - max-depth: 2
+  no-ids: 0

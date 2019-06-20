@@ -18,14 +18,16 @@ social:
 
 # Build settings
 nav:
-  - title: "Process"
-    permalink: "/process/"
-  - title: "FAQ"
-    permalink: "/faq/"
-  - title: "About"
-    permalink: "/about/"
-  - title: "Contact"
-    permalink: "/contact/"
+  - title: 'Home'
+    permalink: '/'
+  - title: 'Process'
+    permalink: '/process/'
+  - title: 'FAQ'
+    permalink: '/faq/'
+  - title: 'About'
+    permalink: '/about/'
+  - title: 'Contact'
+    permalink: '/contact/'
 
 defaults:
   layout: page
@@ -44,5 +46,5 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - "*.sh"
+  - '*.sh'
   - src/
