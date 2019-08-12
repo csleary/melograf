@@ -103,7 +103,7 @@ function quote() {
   } else if (numTracks > 1 && numTracks <= 4) {
     price = 45 + (numTracks - 1) * 35;
   } else if (numTracks > 4) {
-    price = 150 + (numTracks - 4) * 30;
+    price = 150 + (numTracks - 4) * 25;
   } else {
     price = 0;
   }
