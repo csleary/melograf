@@ -7,10 +7,9 @@ permalink: '/'
 <section>
   <h1>Welcome to Melograf</h1>
   {% if site.is_available != true %} {% include not_available.html %} {% endif %}
-  <p>Celebrating ten years of mastering, 2009&ndash;2019!</p>
   <p>
-    Created for the emergent class of DIY musicians and indie labels, Melograf provides the means to
-    give every release the final sheen, balance and punch needed to sound its best, at
+    Created for DIY musicians and indie labels, Melograf provides the means to give every release
+    the final sheen, balance and punch needed to sound its best, at
     <a href="#rates">indie-friendly prices</a>. We proudly offer a tailored experience, striving to
     meet the needs of a variety of artists and labels, across a spectrum of musical genres and
     styles.
@@ -44,7 +43,6 @@ permalink: '/'
       included with original track)
     </li>
     <li>An optional &euro;50 charged for a DDP image</li>
-    <li>Total amount subject to VAT of 21% inside the EU (unless you have a VAT number)</li>
   </ul>
   <p>
     Accepted methods of payment are credit/debit card (via Stripe), PayPal, and bank transfer. You
@@ -66,8 +64,6 @@ permalink: '/'
         image required:
       </label>
       <input type="checkbox" id="ddp" onchange="quote()" />
-      <label for="vat"> Include VAT (21%) in quote: </label>
-      <input type="checkbox" id="vat" onchange="quote()" />
     </form>
     <button onclick="quote()">Update quote</button>
     <p id="results"></p>

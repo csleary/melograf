@@ -95,7 +95,6 @@ function quote() {
   var numTracks = document.getElementById('numTracks').value;
   var price;
   var ddp = document.getElementById('ddp').checked;
-  var vat = document.getElementById('vat').checked;
 
   // Work out per-track price
   if (numTracks == 1) {
@@ -129,9 +128,7 @@ function quote() {
         .css('color', 'red');
     }
   } else {
-    var subtotal = price + extras * 10 + ddp * 50;
-    var vatCost = vat * subtotal * 0.21;
-    var total = subtotal + vatCost;
+    var total = price + extras * 10 + ddp * 50;
 
     document.getElementById('results').innerHTML = 'Total cost will be: &euro;' + total.toFixed(2);
     $('#results')

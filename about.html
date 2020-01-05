@@ -7,49 +7,45 @@ permalink: /about/
 <section>
   <h1>About Melograf</h1>
   <p>
-    Melograf Mastering is operated by engineer Christopher Leary. A keen
-    musician, Leary has been writing and producing
-    <a href="http://ochremusic.com/">music</a> since the late nineties,
-    developing a reputation for pristine production and attention to detail.
+    Melograf Mastering is operated by engineer Christopher Leary. A keen musician, Leary has been
+    writing and producing
+    <a href="http://ochremusic.com/">music</a> since the late nineties, developing a reputation for
+    pristine production and attention to detail.
   </p>
   <p>
-    Since 2007, he has mastered over 700 projects for independent labels and
-    artists. A handful of his growing mastering credits can be seen on
+    Since 2007, he has mastered over 700 projects for independent labels and artists. A handful of
+    his growing mastering credits can be seen on
     <a
-      href="http://www.discogs.com/artist/Christopher+Leary#t=Credits_Technical"
+      href="https://www.discogs.com/artist/1064157-Christopher-Leary?filter_anv=0&subtype=Technical&type=Credits"
       >Discogs.com</a
     >.
   </p>
   <p>
-    Enjoying the combination of objective technical precision and creative
-    musical shaping that the mastering process affords, Leary decided to launch
-    a mastering business in earnest, establishing Melograf Mastering in the late
-    summer of 2009.
+    Enjoying the combination of objective technical precision and creative musical shaping that the
+    mastering process affords, Leary decided to launch a mastering business in earnest, establishing
+    Melograf Mastering in the late summer of 2009.
   </p>
   <p>
-    Some of the labels and artists he's been privileged to work with are listed
-    below.
+    Some of the labels and artists he's been privileged to work with are listed below.
   </p>
   <div class="discog-art">
     {% for release in site.data.discog_art %}
-      <div>
-        <img data-lazy="{{ release.art }}" alt="" />
-        <p>{{ release.artist }} - {{ release.title }}</p>
-      </div>
+    <div>
+      <img data-lazy="{{ release.art }}" alt="" />
+      <p>{{ release.artist }} - {{ release.title }}</p>
+    </div>
     {% endfor %}
   </div>
   <h1>Labels</h1>
   <p class="discog">
-    {% assign sorted_labels = site.data.labels | sort_natural: "name" %}
-    {% for label in sorted_labels %}
-      {{ label.name }}<br />
+    {% assign sorted_labels = site.data.labels | sort_natural: "name" %} {% for label in
+    sorted_labels %} {{ label.name }}<br />
     {% endfor %}
   </p>
   <h1>Artists</h1>
   <p class="discog">
-    {% assign sorted_artists = site.data.artists | sort_natural: "name" %}
-    {% for artist in sorted_artists %}
-      {{ artist.name }}<br />
+    {% assign sorted_artists = site.data.artists | sort_natural: "name" %} {% for artist in
+    sorted_artists %} {{ artist.name }}<br />
     {% endfor %}
   </p>
 </section>
