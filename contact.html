@@ -6,29 +6,16 @@ permalink: /contact/
 
 <section>
   <h1>Contact Me</h1>
-  <p>Please use the form below to get in touch. Thanks!</p>
+  <p>Please use the form below to get in touch, or email directly via contact@melograf.com. Thanks!</p>
   {% if site.is_available != true %} {% include not_available.html %} {% endif %}
   <form id="contact-form" action="/" method="post">
     <div class="form-wrapper">
       <div class="form-left">
         <label for="name">Your name:</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Name"
-          title="Please add your name."
-          required
-        />
+        <input type="text" name="name" id="name" placeholder="Name" title="Please add your name." required />
         <label for="email">Your email address:</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email"
-          title="Please add a valid email address."
-          required
-        />
+        <input type="email" name="email" id="email" placeholder="Email" title="Please add a valid email address."
+          required />
       </div>
       <div class="form-right">
         <label for="artist">Your artist/band name (optional):</label>
@@ -38,15 +25,8 @@ permalink: /contact/
       </div>
     </div>
     <label for="message">Your message:</label>
-    <textarea
-      name="message"
-      id="message"
-      placeholder="Message"
-      rows="12"
-      cols="80"
-      title="Please enter your message."
-      required
-    ></textarea>
+    <textarea name="message" id="message" placeholder="Message" rows="12" cols="80" title="Please enter your message."
+      required></textarea>
     <input type="submit" class="send" value="Send Message" />
   </form>
 </section>
