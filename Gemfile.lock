@@ -48,11 +48,14 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    libv8-node (15.14.0.1)
     liquid (4.0.3)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
+    mini_racer (0.4.0)
+      libv8-node (~> 15.14.0.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
@@ -72,14 +75,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll
-  jekyll-autoprefixer
-  jekyll-feed (~> 0.6)
+  jekyll (~> 4.2)
+  jekyll-autoprefixer (~> 1.0)
+  jekyll-feed
   jekyll-seo-tag
   jekyll-sitemap
-
-RUBY VERSION
-   ruby 3.0.2p107
+  mini_racer
 
 BUNDLED WITH
    2.2.22
