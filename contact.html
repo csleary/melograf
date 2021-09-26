@@ -8,7 +8,7 @@ permalink: /contact/
   <h1>Contact Me</h1>
   <p>Please use the form below to get in touch, or email directly via contact@melograf.com. Thanks!</p>
   {% if site.is_available != true %} {% include not_available.html %} {% endif %}
-  <form id="contact-form" action="/" method="post">
+  <form id="contact-form" method="POST" data-netlify="true">
     <div class="form-wrapper">
       <div class="form-left">
         <label for="name">Your name:</label>
