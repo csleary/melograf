@@ -50,7 +50,7 @@ $(document).ready(function () {
   };
 });
 
-var $contactForm = $('#contact-form');
+var $contactForm = $('#contact');
 
 $contactForm.submit(function (e) {
   e.preventDefault();
