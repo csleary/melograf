@@ -52,39 +52,39 @@ $(document).ready(function () {
 
 const contactForm = $('#contact-form');
 
-contactForm.submit(function (e) {
+contactForm.submit((e) => {
   e.preventDefault();
-  const submitButton = $('input:submit', contactForm);
+  const submitButton = $('.send');
   const defaultSubmitText = submitButton.val();
 
   $.post({
     url: '/',
     contentType: 'application/x-www-form-urlencoded',
     data: $(contactForm).serialize(),
-    beforeSend: function () {
-      submit.prop('disabled', true).val('Sending message…');
+    beforeSend: () => {
+      submitButton.prop('disabled', true).val('Sending message…');
     },
-    success: function () {
+    success: () => {
       contactForm.append(
-        "<div class='success'>Thank you. Your message has been sent successfully.</div>"
+        `<div class='success'>Thank you. Your message has been sent successfully.</div>`
       );
-      submit.val('Message sent!');
+      submitButton.val('Message sent!');
       $('#contact-form')[0].reset();
-      setTimeout(function () {
+      setTimeout(() => {
         $('.success').fadeOut(function () {
           $(this).remove();
         });
-        submit.prop('disabled', false).val(defaultSubmitText);
+        submitButton.prop('disabled', false).val(defaultSubmitText);
       }, 5000);
     },
-    error: function () {
-      contactForm.append("<div class='error'>Sorry, your message could not be sent.</div>");
-      submit.val('Sending failed!');
-      setTimeout(function () {
+    error: () => {
+      contactForm.append(`<div class='error'>Sorry, your message could not be sent.</div>`);
+      submitButton.val('Sending failed!');
+      setTimeout(() => {
         $('.error').fadeOut(function () {
           $(this).remove();
         });
-        submit.prop('disabled', false).val(defaultSubmitText);
+        submitButton.prop('disabled', false).val(defaultSubmitText);
       }, 5000);
     },
   });
