@@ -59,6 +59,7 @@ $contactForm.submit(function (e) {
 
   $.post({
     url: '/',
+    contentType: 'application/x-www-form-urlencoded',
     data: $(this).serialize(),
     beforeSend: function () {
       $submit.prop('disabled', true).val('Sending message…');
