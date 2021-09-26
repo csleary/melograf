@@ -13,7 +13,7 @@ $(document).ready(function () {
   });
 
   $.fn.shineText = function (options) {
-    var settings = $.extend(
+    const settings = $.extend(
       {
         speed: 50,
         shineClass: 'shine',
@@ -23,10 +23,10 @@ $(document).ready(function () {
     );
 
     return this.each(function () {
-      var text = $(this).text();
-      var doAnimate = function (el) {
+      const text = $(this).text();
+      const doAnimate = function (el) {
         el.find('span').each(function () {
-          var that = $(this);
+          const that = $(this);
           setTimeout(function () {
             that.toggleClass(settings.shineClass);
             that.prev().toggleClass(settings.shineClass);
@@ -50,51 +50,51 @@ $(document).ready(function () {
   };
 });
 
-var $contactForm = $('#contact-form');
+const contactForm = $('#contact-form');
 
-$contactForm.submit(function (e) {
+contactForm.submit(function (e) {
   e.preventDefault();
-  var $submit = $('input:submit', $contactForm);
-  var defaultSubmitText = $submit.val();
+  const submitButton = $('input:submit', contactForm);
+  const defaultSubmitText = submitButton.val();
 
   $.post({
     url: '/',
     contentType: 'application/x-www-form-urlencoded',
-    data: $(this).serialize(),
+    data: $(contactForm).serialize(),
     beforeSend: function () {
-      $submit.prop('disabled', true).val('Sending message…');
+      submit.prop('disabled', true).val('Sending message…');
     },
     success: function () {
-      $contactForm.append(
+      contactForm.append(
         "<div class='success'>Thank you. Your message has been sent successfully.</div>"
       );
-      $submit.val('Message sent!');
+      submit.val('Message sent!');
       $('#contact-form')[0].reset();
       setTimeout(function () {
         $('.success').fadeOut(function () {
           $(this).remove();
         });
-        $submit.prop('disabled', false).val(defaultSubmitText);
+        submit.prop('disabled', false).val(defaultSubmitText);
       }, 5000);
     },
     error: function () {
-      $contactForm.append("<div class='error'>Sorry, your message could not be sent.</div>");
-      $submit.val('Sending failed!');
+      contactForm.append("<div class='error'>Sorry, your message could not be sent.</div>");
+      submit.val('Sending failed!');
       setTimeout(function () {
         $('.error').fadeOut(function () {
           $(this).remove();
         });
-        $submit.prop('disabled', false).val(defaultSubmitText);
+        submit.prop('disabled', false).val(defaultSubmitText);
       }, 5000);
     },
   });
 });
 
 function quote() {
-  var extras = document.getElementById('extras').value;
-  var numTracks = document.getElementById('numTracks').value;
-  var price;
-  var ddp = document.getElementById('ddp').checked;
+  const extras = document.getElementById('extras').value;
+  const numTracks = document.getElementById('numTracks').value;
+  const ddp = document.getElementById('ddp').checked;
+  let price;
 
   // Work out per-track price
   if (numTracks == 1) {
