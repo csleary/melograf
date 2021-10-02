@@ -25,13 +25,11 @@ permalink: /about/
     mastering process affords, Leary decided to launch a mastering business in earnest, establishing
     Melograf Mastering in the late summer of 2009.
   </p>
-  <p>
-    Some of the labels and artists he's been privileged to work with are listed below.
-  </p>
+  <p>Some of the labels and artists he's been privileged to work with are listed below.</p>
   <div class="discog-art">
     {% for release in site.data.discog_art %}
     <div>
-      <img data-lazy="{{ release.art }}" alt="" />
+      {% picture {{ release.art }} --img class="lazyload" --alt "" %}
       <p>{{ release.artist }} - {{ release.title }}</p>
     </div>
     {% endfor %}

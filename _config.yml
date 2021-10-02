@@ -1,7 +1,7 @@
 title: Melograf Mastering
 email: mail@melograf.com
 description: 'Audio mastering by Christopher Leary.'
-baseurl:
+baseurl: ''
 url: 'https://melograf.com'
 twitter:
   username: ochremusic
@@ -41,12 +41,17 @@ sass:
 markdown: kramdown
 
 plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
   - jekyll-autoprefixer
+  - jekyll_picture_tag
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - '*.sh'
   - src/
+
+picture:
+  source: 'assets'
+  output: 'assets/opt'
